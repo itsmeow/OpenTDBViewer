@@ -1,0 +1,6 @@
+@import "variables";
+$body-bg: $primary-background;
+$body-color: $text-color;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "index";
+@import "../../node_modules/react-toastify/dist/ReactToastify.css";
