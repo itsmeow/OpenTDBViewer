@@ -26,7 +26,7 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-982d87be6868ec6261ec.js"
+    "url": "webpack-runtime-9bc788751f93c3325b71.js"
   },
   {
     "url": "framework-c88d07efb40e009babfb.js"
@@ -38,14 +38,14 @@ self.__precacheManifest = [
     "url": "styles-1c3c06048fccead674b8.js"
   },
   {
-    "url": "app-837611e7dccfb80079d4.js"
+    "url": "app-ac60114e416120a92589.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-f4fac7fe18e6d82ece00.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "08cc81e0c00cd9e22d6e5f04691b46c2"
+    "revision": "fb185879e16a693f54a4c542c4ded52b"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -53,11 +53,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "5a3bb25d7a764b701845d3e2b97347dd"
+    "revision": "284454fda43d0b7ce013677d397eccd1"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "48630b2acb8970a390d07f45221d9023"
+    "revision": "a3a4c293019b63a0c62acbe939551a04"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -76,12 +76,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/opentdbviewer`), ``)
+  pathname = pathname.replace(new RegExp(`^/OpenTDBViewer`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/opentdbviewer/app-837611e7dccfb80079d4.js`))) {
+  if (!resources || !(await caches.match(`/OpenTDBViewer/app-ac60114e416120a92589.js`))) {
     return await fetch(event.request)
   }
 
@@ -94,7 +94,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/opentdbviewer/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/OpenTDBViewer/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
