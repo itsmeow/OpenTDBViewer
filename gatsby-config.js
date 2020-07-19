@@ -3,7 +3,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 module.exports = {
-  pathPrefix: "/",
+  pathPrefix: "/OpenTDBViewer",
   siteMetadata: {
     title: `OpenTDB viewer`,
     description: `View OpenTDB`,

@@ -47,6 +47,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build && git commit -m \"Changes\" && git push origin source"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
