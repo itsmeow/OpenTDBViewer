@@ -82,11 +82,15 @@ const IndexPage = () => {
     <>
       <SEO title="Home" />
       <main>
-        <div className="scorecard">
-          <strong>Score: </strong>
-          {score}/{outOf} (
-          {outOf !== 0 ? `${Math.floor((score / outOf) * 100)}%` : "0%"})
-        </div>
+        {list.length > 0 ? (
+          <div className="scorecard">
+            <strong>Score: </strong>
+            {score}/{outOf} (
+            {outOf !== 0 ? `${Math.floor((score / outOf) * 100)}%` : "0%"})
+          </div>
+        ) : (
+          ""
+        )}
         <div
           className="question-form"
           style={{ paddingLeft: "20px", paddingRight: "20px" }}
@@ -167,14 +171,36 @@ const IndexPage = () => {
             Get Questions
           </button>
         </div>
-        <h1 style={{ marginLeft: "20px" }}>
-          Questions{" "}
-          <button className="btn btn-danger" onClick={resetScore}>
-            Reset Score
-          </button>
-        </h1>
-        <div className="questions-list">{list}</div>
+        {list.length > 0 ? (
+          <>
+            <h1 style={{ marginLeft: "20px" }}>
+              Questions{" "}
+              <button className="btn btn-danger" onClick={resetScore}>
+                Reset Score
+              </button>
+            </h1>
+            <div className="questions-list">{list}</div>
+          </>
+        ) : (
+          ""
+        )}
       </main>
+      <footer>
+        <div>
+          Questions provided by{" "}
+          <a href="https://opentdb.com/">Open Trivia Database</a>, a publicly
+          accessible and user-contributed database of Trivia Questions, created
+          by <a href="https://pixeltailgames.com">PIXELTAIL GAMES LLC</a>.
+          <br />
+          OpenTDB is licensed under{" "}
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            CC-BY-SA 4.0
+          </a>
+          .
+          <br />
+          Site Created by <a href="https://itsmeow.dev/">itsmeow</a>.
+        </div>
+      </footer>
     </>
   );
 };
