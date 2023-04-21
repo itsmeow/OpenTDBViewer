@@ -6,7 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "formik": "^2.1.4",
-    "gatsby": "^2.3.34",
+    "gatsby": "^5.9.0",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-manifest": "^2.0.29",
@@ -14,7 +14,7 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-source-filesystem": "^2.0.33",
     "gatsby-source-twitter": "^3.2.1",
     "gatsby-transformer-json": "^2.3.3",
